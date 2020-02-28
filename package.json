@@ -7,6 +7,21 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
   "dependencies": {
     "core-js": "^3.6.4",
     "standard": "^14.3.1",
@@ -24,6 +39,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
